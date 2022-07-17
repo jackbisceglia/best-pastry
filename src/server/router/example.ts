@@ -37,7 +37,7 @@ const getNextPastry = (pArr: Pastry[], p?: Pastry) => {
     return Math.abs(a.elo - p.elo) - Math.abs(b.elo - p.elo);
   });
 
-  const RANGE = Math.floor(pastriesByClosestElo.length / 5);
+  const RANGE = Math.floor(pastriesByClosestElo.length / 3);
 
   let opponent = getRandomPastry(pastriesByClosestElo, RANGE);
 
