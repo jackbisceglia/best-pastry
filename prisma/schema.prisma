@@ -2,15 +2,20 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
 }
-
 datasource db {
-    provider = "sqlite"
-    url      = "file:./db.sqlite"
-    // url      = env("DATABASE_URL")
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
-model Example {
+model Pastry {
     id String @id @default(cuid())
+    name String @unique
+    picture_url String @db.VarChar(244)
+    elo Int @default(1000)
+    num_wins Int @default(0)
+    num_losses Int @default(0)
 }

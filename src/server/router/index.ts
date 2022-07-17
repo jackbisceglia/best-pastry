@@ -6,7 +6,7 @@ import { exampleRouter } from "./example";
 
 export const appRouter = createRouter()
   .transformer(superjson)
-  .merge("example.", exampleRouter);
+  .merge("pastries.", exampleRouter);
 
 // export type definition of API
 export type AppRouter = typeof appRouter;
