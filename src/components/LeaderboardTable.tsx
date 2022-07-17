@@ -52,7 +52,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ searchTerm }) => {
   }
 
   return (
-    <table className="table-auto text-sm sm:text-md md:text-lg px-10 w-100">
+    <table className="table-auto border-separate text-sm sm:text-md md:text-lg px-10 w-100">
       <thead className="">
         <tr className="px-2 table-row">
           <th className={tableEntry}>Pastry</th>
@@ -77,7 +77,7 @@ const LeaderboardEntry: React.FC<Pastry> = ({
   num_losses,
 }) => {
   return (
-    <tr className="py-2 table-row">
+    <tr className="table-row border-b-2 h-8 border-gray-400">
       <td className={`${tableEntry} w-10 sm:w-fit`}>{name}</td>
       <td className={tableEntry}>{elo}</td>
       <td className={tableEntry}>
