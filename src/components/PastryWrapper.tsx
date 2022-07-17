@@ -6,14 +6,14 @@ import { useState } from "react";
 const PastryWrapper: React.FC = () => {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <h1 className="py-4">Pick your Pastry</h1>
+      <h1 className="py-2">Pick your Pastry</h1>
       <PastryData />
     </div>
   );
 };
 
 const PastryData = () => {
-  const { data, isError, isLoading, refetch } = trpc.useQuery([
+  const { data, isError, isLoading, refetch, isFetched } = trpc.useQuery([
     "pastries.get-matchup",
   ]);
   const eloMutation = trpc.useMutation(["pastries.vote"]);
@@ -71,7 +71,7 @@ const PastryData = () => {
     <>
       <button
         disabled={eloMutation.isLoading || isLoading}
-        className="py-1 px-4 text-xs rounded-sm bg-gray-400 text-gray-50"
+        className="py-1 my-1 px-4 text-xs rounded-sm bg-gray-400 text-gray-50"
         onClick={() => refetch()}
       >
         New Matchup
@@ -85,7 +85,7 @@ const PastryData = () => {
             loadState={isLoading || eloMutation.isLoading}
             hasHigherElo={(() => {
               let oppIdx = idx == 0 ? 1 : 0;
-              return data[oppIdx]?.elo <= currPastry?.elo;
+              return data[oppIdx]!.elo <= currPastry!.elo;
             })()}
           />
         ))}

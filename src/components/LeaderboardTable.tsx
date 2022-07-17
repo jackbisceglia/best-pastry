@@ -1,7 +1,7 @@
 import { Pastry } from "@prisma/client";
 import { trpc } from "../utils/trpc";
 
-const tableEntry = "px-4 text-center";
+const tableEntry = " pr-3 sm:pr-5 text-left table-cell capitalize";
 
 const getTitle = (elo: number) => {
   const eloTitles = {
@@ -52,9 +52,9 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ searchTerm }) => {
   }
 
   return (
-    <table className="table-auto text-lg">
+    <table className="table-auto text-sm sm:text-md md:text-lg px-10 w-100">
       <thead className="">
-        <tr className="px-10">
+        <tr className="px-2 table-row">
           <th className={tableEntry}>Pastry</th>
           <th className={tableEntry}>Rating</th>
           <th className={tableEntry}>Record</th>
@@ -77,8 +77,8 @@ const LeaderboardEntry: React.FC<Pastry> = ({
   num_losses,
 }) => {
   return (
-    <tr className="py-2">
-      <td className={tableEntry}>{name}</td>
+    <tr className="py-2 table-row">
+      <td className={`${tableEntry} w-10 sm:w-fit`}>{name}</td>
       <td className={tableEntry}>{elo}</td>
       <td className={tableEntry}>
         {num_wins} - {num_losses}

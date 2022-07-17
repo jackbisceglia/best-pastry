@@ -18,7 +18,7 @@ const Leaderboard: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col items-center justify-center h-full w-full">
-        <h1 className=" text-emerald-700 text-2xl font-bold">
+        <h1 className="text-emerald-700 text-2xl font-bold">
           Best Pastry Leaderboard
         </h1>
         <div className="w-4/12 py-4 flex justify-center items-center">
