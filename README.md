@@ -1,3 +1,3 @@
-# Create T3 App
+# Best Pastry
 
-This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
+A duel to find the best pastry, using an Elo ranking system. Using T3Stack
